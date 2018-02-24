@@ -33,10 +33,13 @@
 .logo {
     position: fixed;
     float: left;
-    margin: 20px 36px;
+    margin: 12px 36px;
     color: white;
     font-size: 24px;
     cursor: pointer;
+    font: 400 40px/1.2 'Lobster Two', Helvetica, sans-serif;
+    color: white;
+    text-shadow: 1px 1px 0px #ededed, 4px 4px 0px rgba(0, 0, 0, 0.15);
 }
 
 nav {
@@ -60,7 +63,7 @@ nav ul {
 nav ul li {
     list-style: none;
     display: inline-block;
-    padding: 20px 20px 125px 20px;
+    padding: 20px 20px 140px 20px;
 }
 
 nav ul li:hover {
@@ -69,8 +72,8 @@ nav ul li:hover {
 
 nav ul li a {
     text-decoration: none;
-    font-size: 20px;
-    color: white;
+    font-size: 18px;
+    color: white;    
 }
 
 nav ul li:hover a {
@@ -85,7 +88,7 @@ nav ul li:hover a {
     .logo {
         position: fixed;
         top: 0;
-        margin-top: 16px;
+        margin-left: 38%;
         color: white;
     }
     .wrapper::after {
