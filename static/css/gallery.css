@@ -33,7 +33,7 @@
 .logo {
     position: fixed;
     float: left;
-    margin: 16px 36px;
+    margin: 20px 36px;
     color: white;
     font-size: 24px;
     cursor: pointer;
@@ -41,12 +41,13 @@
 
 nav {
     position: fixed;
+    display: block;
+    height: 28%;
     width: 100%;
-    background: rgba(0, 0, 0, 1);
-}
-
-nav.black ul {
-    background: #000;
+    background: url('/static/imgs/a-navbar.png');
+    background-size: 100%;
+    background-repeat: no-repeat;
+    transition: .3s;
 }
 
 nav ul {
@@ -59,11 +60,11 @@ nav ul {
 nav ul li {
     list-style: none;
     display: inline-block;
-    padding: 20px;
+    padding: 20px 20px 125px 20px;
 }
 
 nav ul li:hover {
-    background-color: white;
+    background-color: rgba(255, 255, 255, 0.3);
 }
 
 nav ul li a {
@@ -87,15 +88,16 @@ nav ul li:hover a {
         margin-top: 16px;
         color: white;
     }
-    nav {
-        background-color: #000;
+    .wrapper::after {
+        display: none;
     }
-    nav.black ul {
-        background: #000;
+    nav {
+        height: 12%;
+        background: linear-gradient(90deg, #f0027f, #75489f);
     }
     nav ul {
         max-height: 10px;
-        background: black;
+        background: linear-gradient(90deg, #f0027f, #75489f);
     }
     .showing {
         display: none;
@@ -107,7 +109,7 @@ nav ul li:hover a {
         padding: 24px 0;
         text-align: center;
         color: white;
-        background-color: black;
+        background: linear-gradient(90deg, #f0027f, #75489f);
     }
     nav ul li a {
         text-decoration: none;
