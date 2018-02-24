@@ -1,4 +1,4 @@
-{% load bootstrap4 %} {% load static %}
+{% load bootstrap4 %} {% load static %} {% load staticfiles %}
 <!DOCTYPE html>
 <html lang="en">
 
@@ -10,7 +10,7 @@
     <title>Galleria</title>
 
     {% block styles %} {% bootstrap_css %}
-    <link rel="stylesheet" href="{% static 'gallery/gallery.css' %}">
+    <link rel="stylesheet" href="{% static 'css/gallery.css' %}">
     <script defer src="https://use.fontawesome.com/releases/v5.0.6/js/all.js"></script>
     {% endblock %}
 
@@ -18,35 +18,42 @@
 
 <body>
 
-    <div class="wrapper">        
-            <nav>
-                <div class="menu-icon">
-                    <a href="" class="nav">
-                        <div class="one"></div>
-                        <div class="two"></div>
-                        <div class="three"></div>
-                    </a>
-                </div>
-                <div class="logo">
-                    LOGO
-                </div>
-                <div class="menu">
-                    <ul>
-                        <li><a href="#">Home</a></li>
-                        <li><a href="#">Category</a></li>
-                        <li><a href="#">Location</a></li>     
-                    </ul>
-                </div>
-            </nav>        
+    <div class="wrapper">
+        <nav>
+            <div class="menu-icon">
+                <div class="one"></div>
+                <div class="two"></div>
+                <div class="three"></div>
+            </div>
+            <div class="logo">
+                LOGO
+            </div>
+            <div class="menu">
+                <ul>
+                    <li>
+                        <a href="#">Home</a>
+                    </li>
+                    <li>
+                        <a href="#">Category</a>
+                    </li>
+                    <li>
+                        <a href="#">Location</a>
+                    </li>
+                </ul>
+            </div>
+        </nav>
     </div>
 
     <div class="container-fluid">
-        
+
     </div>
 
     {% block scripts %}
     <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.3.1/jquery.min.js"></script>
-    {% bootstrap_javascript %} {% endblock %}
+
+    {% bootstrap_javascript %}
+    <script type="text/javascript" src="{% static 'js/gallery.js' %}"></script>
+    {% endblock %}
 </body>
 
 </html>
