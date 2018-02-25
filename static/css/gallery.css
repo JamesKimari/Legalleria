@@ -1,3 +1,7 @@
+* {
+    zoom: 100%;
+}
+
 .menu-icon div {
     height: 5px;
     background: white;
@@ -31,39 +35,35 @@
 }
 
 .logo {
-    position: fixed;
-    float: left;
+    display: inline-block;
     margin: 12px 36px;
-    color: white;
-    font-size: 24px;
+    color: white;    
     cursor: pointer;
-    font: 400 40px/1.2 'Lobster Two', Helvetica, sans-serif;
+    font: 400 2.5vw 'Lobster Two', Helvetica, sans-serif;
     color: white;
     text-shadow: 1px 1px 0px #ededed, 4px 4px 0px rgba(0, 0, 0, 0.15);
 }
 
 nav {
-    position: fixed;
     display: block;
-    height: 28%;
+    height: 26%;
     width: 100%;
     background: url('/static/imgs/a-navbar.png');
     background-size: 100%;
-    background-repeat: no-repeat;
-    transition: .3s;
+    background-repeat: no-repeat;    
 }
 
 nav ul {
-    padding: 0;
-    margin: 0 auto;
-    transition: 1s;
+    margin-bottom: 0;     
+    margin-top: -5.2vw;   
     text-align: center;
+    padding-left: 0;
 }
 
 nav ul li {
     list-style: none;
     display: inline-block;
-    padding: 20px 20px 140px 20px;
+    padding: 1% 1% 11% 1%;
 }
 
 nav ul li:hover {
@@ -73,7 +73,7 @@ nav ul li:hover {
 nav ul li a {
     text-decoration: none;
     font-size: 18px;
-    color: white;    
+    color: white;
 }
 
 nav ul li:hover a {
@@ -86,30 +86,32 @@ nav ul li:hover a {
         display: block;
     }
     .logo {
-        position: fixed;
         top: 0;
-        margin-left: 40%;
+        margin-left: 42.5%;        
+        font: 400 2em 'Lobster Two', Helvetica, sans-serif;
         color: white;
-    }
-    .wrapper::after {
-        display: none;
+        text-shadow: 1px 1px 0px #ededed, 4px 4px 0px rgba(0, 0, 0, 0.15);
     }
     nav {
         height: 12%;
         background: linear-gradient(90deg, #f0027f, #75489f);
     }
     nav ul {
+        margin: 0;
+        position: relative;
         max-height: 10px;
         background: linear-gradient(90deg, #f0027f, #75489f);
     }
-    .showing {
-        display: none;
-        max-height: 20em;
+    .hidden {
+        display: none;        
+    }
+    ul.hidden {
+        padding-left: 0px;       
     }
     nav ul li {
         box-sizing: border-box;
         width: 100%;
-        padding: 24px 0;
+        padding: 1.8em;
         text-align: center;
         color: white;
         background: linear-gradient(90deg, #f0027f, #75489f);
