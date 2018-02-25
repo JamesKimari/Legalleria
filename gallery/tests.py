@@ -58,7 +58,7 @@ class LocationTestClass(TestCase):
         self.Nairobi.save_location()
         self.Nairobi = Location(name = 'Nai')
         self.Nairobi.save_location()
-        self.Nairobi.update_location()
+        self.Nairobi.update_location(name = 'Nai')
         locations = Location.objects.filter(name = 'Nai')
         self.assertEqual(len(locations), 1)
 
@@ -86,6 +86,6 @@ class CategoryTestClass(TestCase):
         self.health.save_category()
         self.health = Category(name = 'medicine')
         self.health.save_category()
-        self.health.update_category()
+        self.health.update_category(name = 'medicine')
         categories = Category.objects.filter(name = 'medicine')
         self.assertEqual(len(categories), 1)
