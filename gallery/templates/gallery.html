@@ -1,64 +1,6 @@
-{% load bootstrap4 %} {% load static %} {% load staticfiles %}
-<!DOCTYPE html>
-<html lang="en">
+{% extends 'base.html' %} {% block content %}
 
-<head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=
-    , initial-scale=1.0">
-    <meta http-equiv="X-UA-Compatible" content="ie=edge">
-    <title>Galleria</title>
+<div class="wrap" style="margin-top: 0%;">    
+</div>
 
-    {% block styles %} {% bootstrap_css %}
-    <link rel="stylesheet" href="{% static 'css/gallery.css' %}">
-    <link href='http://fonts.googleapis.com/css?family=Lobster+Two' rel='stylesheet' type='text/css'>
-    <script defer src="https://use.fontawesome.com/releases/v5.0.6/js/all.js"></script>
-    {% endblock %}
-
-</head>
-
-<body>
-
-<!-- Custom navbar -->
-
-    <div class="wrapper">
-        <nav>
-            <div class="menu-icon">
-                <div class="one"></div>
-                <div class="two"></div>
-                <div class="three"></div>
-            </div>
-            <div class="logo">
-                Galleria
-            </div>
-            <div class="menu">
-                <ul>
-                    <li>
-                        <a href="#">Home</a>
-                    </li>
-                    <li>
-                        <a href="#">Category</a>
-                    </li>
-                    <li>
-                        <a href="#">Location</a>
-                    </li>
-                </ul>
-            </div>
-        </nav>
-    </div>
-
-    <!--  -->
-
-    <div class="container-fluid">
-
-    </div>
-
-    {% block scripts %}
-    <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.3.1/jquery.min.js"></script>
-
-    {% bootstrap_javascript %}
-    <script type="text/javascript" src="{% static 'js/gallery.js' %}"></script>
-    {% endblock %}
-</body>
-
-</html>
+{% endblock %}
