@@ -88,7 +88,7 @@ nav ul li:hover a {
     .logo {
         position: fixed;
         top: 0;
-        margin-left: 38%;
+        margin-left: 40%;
         color: white;
     }
     .wrapper::after {
