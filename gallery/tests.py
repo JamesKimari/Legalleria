@@ -22,7 +22,19 @@ class ImageTestClass(TestCase):
         images = Image.objects.all()
         self.assertEqual(len(images), 1)
 
-class LocationTestClass(TestCase):
+    def test_update_method(self):
+        self.Elaine = Image(name = 'Elaine', description = 'she is an attractive lady')
+        self.Elaine.save_image()
+        self.Elaine = Image(name = 'Elena', description = 'she is an attractive lady')        
+        self.Elaine.update_image(name = 'Elena')
+        self.Elaine.save_image()
+        images = Image.objects.filter(name = 'Elena')
+        pics = Image.objects.all()
+        # print(images)
+        # print(pics)        
+        self.assertEqual(len(images), 1)
+
+class LocationTestClass(TestCase):    
     def setUp(self):
         self.Kenya = Location(name = 'Kenya')
 
@@ -40,6 +52,15 @@ class LocationTestClass(TestCase):
         self.new_location.delete_location()
         locations = Location.objects.all()
         self.assertEqual(len(locations), 0)
+
+    def test_update_method(self):
+        self.Nairobi = Location(name = 'Nairobi')
+        self.Nairobi.save_location()
+        self.Nairobi = Location(name = 'Nai')
+        self.Nairobi.save_location()
+        self.Nairobi.update_location()
+        locations = Location.objects.filter(name = 'Nai')
+        self.assertEqual(len(locations), 1)
 
 class CategoryTestClass(TestCase):
     def setUp(self):
@@ -59,3 +80,12 @@ class CategoryTestClass(TestCase):
         self.new_category.delete_category()
         categories = Category.objects.all()
         self.assertEqual(len(categories), 0)
+
+    def test_update_category(self):
+        self.health = Category(name = 'Health')
+        self.health.save_category()
+        self.health = Category(name = 'medicine')
+        self.health.save_category()
+        self.health.update_category()
+        categories = Category.objects.filter(name = 'medicine')
+        self.assertEqual(len(categories), 1)
