@@ -1,3 +1,5 @@
+/* css for custom navbar */
+
 * {
     zoom: 100%;
 }
@@ -45,6 +47,7 @@
 }
 
 nav {
+    position: unset;
     display: block;
     height: 26%;
     width: 100%;
@@ -122,3 +125,5 @@ nav ul li:hover a {
         color: #fff;
     }
 }
+
+/* end of css for navbar */
