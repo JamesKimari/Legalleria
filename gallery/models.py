@@ -48,10 +48,17 @@ class Image(models.Model):
         Image.objects.filter(id = self.pk).update(**kwargs)
 
     def delete_image(self):
-        Image.objects.filter(id = self.pk).delete()    
+        Image.objects.filter(id = self.pk).delete()   
+
+    @classmethod
+    def display_all_pics(cls):
+        pics = cls.objects.all()
+        return pics 
 
     class Meta:
         ordering = ['name']
+
+    
 
   
 
