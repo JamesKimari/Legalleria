@@ -1,6 +1,11 @@
 {% extends 'base.html' %} {% block content %}
 
-<div class="wrap" style="margin-top: 0%;">    
+<div class="row">
+    {% for pic in all_pics %}
+    <div class="col-xs-4 col-sm-4 col-md-4 col-lg-4 columns">
+        <img src="{{pic.image.url}}" alt="Image" class="img-responsive">
+    </div>    
+    {% endfor %}
 </div>
 
 {% endblock %}
