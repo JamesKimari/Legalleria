@@ -1,8 +1,16 @@
 from django.db import models
 
 # Create your models here.
+CATEGORIES = (
+    ('1', 'Illustrations'),
+    ('2', 'Interior'),
+    ('3', 'Random'),
+    ('4', 'Siberian'),
+    ('5', 'Wakanda'),
+)
+
 class Category(models.Model):
-    name = models.CharField(max_length=20)        
+    name = models.CharField(max_length=1, choices=CATEGORIES)        
 
     def __str__(self):
         return self.name
@@ -16,8 +24,16 @@ class Category(models.Model):
     def delete_category(self):
         Category.objects.filter(id = self.pk).delete()
 
+LOCATIONS = (
+    ('1', 'Poka Universe'),
+    ('2', 'Singapore'),
+    ('3', 'Nairobi, Kenya'),
+    ('4', 'Siberia'),
+    ('5', 'Wakanda'),
+)
+
 class Location(models.Model):
-    name = models.CharField(max_length=20)    
+    name = models.CharField(max_length=1, choices=LOCATIONS)    
 
     def __str__(self):
         return self.name
