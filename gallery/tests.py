@@ -75,7 +75,7 @@ class CategoryTestClass(TestCase):
         self.assertTrue(len(categories) > 0)
 
     def test_delete_method(self):
-        self.new_category = Category(name = 'Siberian Huskies')
+        self.new_category = Category(name = 'Siberian')
         self.new_category.save_category()
         self.new_category.delete_category()
         categories = Category.objects.all()

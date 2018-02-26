@@ -10,7 +10,7 @@ CATEGORIES = (
 )
 
 class Category(models.Model):
-    name = models.CharField(max_length=15, choices=CATEGORIES)        
+    name = models.CharField(max_length=15, choices=CATEGORIES) 
 
     def __str__(self):
         return self.name
@@ -20,11 +20,10 @@ class Category(models.Model):
 
     def delete_category(self):
         Category.objects.filter(id = self.pk).delete()
-
-    @classmethod
-    def update_category(cls, id, category, update):
-        updated = cls.objects.filter(id=id).update(category=update)
-        return updated
+    
+    def update_category(self, **kwargs):
+        self.objects.filter(id = self.pk).update(**kwargs)
+        
 
 LOCATIONS = (
     ('Poka Universe', 'Poka Universe'),
@@ -35,7 +34,7 @@ LOCATIONS = (
 )
 
 class Location(models.Model):
-    name = models.CharField(max_length=20, choices=LOCATIONS)    
+    name = models.CharField(max_length=20, choices=LOCATIONS) 
 
     def __str__(self):
         return self.name
@@ -45,12 +44,10 @@ class Location(models.Model):
 
     def delete_location(self):
         Location.objects.filter(id = self.pk).delete()
-
-    @classmethod
-    def update_location(cls, id, location, update):
-        updated = cls.objects.filter(id=id).update(location=update)
-        return updated
-
+   
+    def update_location(self, **kwargs):
+        self.objects.filter(id = self.pk).update(**kwargs)
+        
 
 class Image(models.Model):
     image = models.ImageField(upload_to = '', null = True, blank = True)
@@ -67,11 +64,9 @@ class Image(models.Model):
 
     def delete_image(self):
         Image.objects.filter(id = self.pk).delete() 
-
-    @classmethod
-    def update_image(cls, id, pic, update):
-        updated = cls.objects.filter(id=id).update(pic=update) 
-        return updated 
+    
+    def update_image(self, **kwargs):
+        self.objects.filter(id = self.pk).update(**kwargs)       
 
     @classmethod
     def display_all_pics(cls):
@@ -84,14 +79,9 @@ class Image(models.Model):
         return pic
 
     @classmethod
-    def filter_by_location(cls):
-        pics = cls.objects.filter(location__in=locations)
+    def get_categories(cls):
+        images = Image.objects.filter(location__in=locations)
+        return images
 
     class Meta:
         ordering = ['name']
-
-    
-
-  
-
-
