@@ -2,50 +2,55 @@ from django.db import models
 
 # Create your models here.
 CATEGORIES = (
-    ('1', 'Illustrations'),
-    ('2', 'Interior'),
-    ('3', 'Random'),
-    ('4', 'Siberian'),
-    ('5', 'Wakanda'),
+    ('Illustrations', 'Illustrations'),
+    ('Interior', 'Interior'),
+    ('Random', 'Random'),
+    ('Siberian', 'Siberian'),
+    ('Wakanda', 'Wakanda'),
 )
 
 class Category(models.Model):
-    name = models.CharField(max_length=1, choices=CATEGORIES)        
+    name = models.CharField(max_length=15, choices=CATEGORIES)        
 
     def __str__(self):
         return self.name
 
     def save_category(self):
-        self.save()
-
-    def update_category(self, **kwargs):
-        Category.objects.filter(id = self.pk).update(**kwargs)
+        self.save()    
 
     def delete_category(self):
         Category.objects.filter(id = self.pk).delete()
 
+    @classmethod
+    def update_category(cls, id, category, update):
+        updated = cls.objects.filter(id=id).update(category=update)
+        return updated
+
 LOCATIONS = (
-    ('1', 'Poka Universe'),
-    ('2', 'Singapore'),
-    ('3', 'Nairobi, Kenya'),
-    ('4', 'Siberia'),
-    ('5', 'Wakanda'),
+    ('Poka Universe', 'Poka Universe'),
+    ('Singapore', 'Singapore'),
+    ('Nairobi, Kenya', 'Nairobi, Kenya'),
+    ('Siberia', 'Siberia'),
+    ('Wakanda', 'Wakanda'),
 )
 
 class Location(models.Model):
-    name = models.CharField(max_length=1, choices=LOCATIONS)    
+    name = models.CharField(max_length=20, choices=LOCATIONS)    
 
     def __str__(self):
         return self.name
 
     def save_location(self):
-        self.save()
-
-    def update_location(self, **kwargs):
-        Location.objects.filter(id = self.pk).update(**kwargs)
+        self.save()    
 
     def delete_location(self):
         Location.objects.filter(id = self.pk).delete()
+
+    @classmethod
+    def update_location(cls, id, location, update):
+        updated = cls.objects.filter(id=id).update(location=update)
+        return updated
+
 
 class Image(models.Model):
     image = models.ImageField(upload_to = '', null = True, blank = True)
@@ -58,19 +63,29 @@ class Image(models.Model):
         return self.name
 
     def save_image(self):
-        self.save()
-
-    def update_image(self, **kwargs):
-        name = Image.name
-        Image.objects.filter(id = self.pk).update(**kwargs)
+        self.save()   
 
     def delete_image(self):
-        Image.objects.filter(id = self.pk).delete()   
+        Image.objects.filter(id = self.pk).delete() 
+
+    @classmethod
+    def update_image(cls, id, pic, update):
+        updated = cls.objects.filter(id=id).update(pic=update) 
+        return updated 
 
     @classmethod
     def display_all_pics(cls):
         pics = cls.objects.all()
         return pics 
+
+    @classmethod
+    def get_pic(cls, id):
+        pic = cls.objects.get(id=id)
+        return pic
+
+    @classmethod
+    def filter_by_location(cls):
+        pics = cls.objects.filter(location__in=locations)
 
     class Meta:
         ordering = ['name']
