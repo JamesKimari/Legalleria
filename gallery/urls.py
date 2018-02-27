@@ -4,7 +4,10 @@ from django.conf import settings
 from django.conf.urls.static import static
 
 urlpatterns=[
-    path('', views.gallery, name = 'gallery')
+    path('', views.gallery, name = 'gallery'),
+    path('search/', views.search_results, name = 'search_results'),
+    path('categories/', views.display_images_categories, name = 'categories'),
+    path('locations/', views.display_images_locations, name = 'locations')
 ]
 if settings.DEBUG:
     urlpatterns+= static(settings.MEDIA_URL, document_root = settings.MEDIA_ROOT)
