@@ -23,7 +23,6 @@ class Category(models.Model):
     
     def update_category(self, **kwargs):
         self.objects.filter(id = self.pk).update(**kwargs)
-        
 
 LOCATIONS = (
     ('Poka Universe', 'Poka Universe'),
@@ -46,8 +45,7 @@ class Location(models.Model):
         Location.objects.filter(id = self.pk).delete()
    
     def update_location(self, **kwargs):
-        self.objects.filter(id = self.pk).update(**kwargs)
-        
+        self.objects.filter(id = self.pk).update(**kwargs)     
 
 class Image(models.Model):
     image = models.ImageField(upload_to = '', null = True, blank = True)
@@ -69,8 +67,18 @@ class Image(models.Model):
         self.objects.filter(id = self.pk).update(**kwargs)       
 
     @classmethod
-    def display_all_pics(cls):
+    def all_pics(cls):
         pics = cls.objects.all()
+        return pics 
+
+    @classmethod
+    def pic_locations(cls):
+        pics = cls.objects.order_by('location')
+        return pics 
+
+    @classmethod
+    def pic_categories(cls):
+        pics = cls.objects.order_by('category')
         return pics 
 
     @classmethod
@@ -79,9 +87,9 @@ class Image(models.Model):
         return pic
 
     @classmethod
-    def get_categories(cls):
-        images = Image.objects.filter(location__in=locations)
-        return images
+    def search_by_category(cls, search_input):
+        images = cls.objects.filter(category__name__icontains=search_input)
+        return images        
 
     class Meta:
         ordering = ['name']
