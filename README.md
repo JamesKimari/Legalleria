@@ -55,7 +55,7 @@
 ## Setup/Installation Requirements
 
 > - Internet connection
-> - Link to deployed page: [Heroku](Le-Galleria.herokuapp.com)
+> - Link to deployed page: [Heroku](http://legalleria.herokuapp.com)
 
 ## Known Bugs
 
