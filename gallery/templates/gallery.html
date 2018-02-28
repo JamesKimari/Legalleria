@@ -6,7 +6,7 @@
         <div class="scale">
             <div class="opacity">
                 <div class="view">
-                    <a href="" class="btn-view">View Image</a>
+                    <a href="{% url 'single_pic' image_id=pic.id %}" class="btn-view">View Image</a>
                 </div>
             </div>
             <img src="{{pic.image.url}}" alt="Image" class="img-fluid">
