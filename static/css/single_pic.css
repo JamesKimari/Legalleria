@@ -188,6 +188,7 @@ input#imageurl {
     border-radius: 4px;
     border: 2px solid rgb(15, 117, 15);
 }
+
 @media (min-width: 769px) {
     .container-fluid {
         padding: 1% 3% 0 3%;
@@ -263,17 +264,16 @@ input#imageurl {
 @media(max-width: 768px) {
     .menu-icon {
         display: block;
-        margin: 1vw 2vw 1vw 0;
+        margin: 2vw 2vw 1vw 0;
     }
     .logo {
         top: 0;
-        margin-left: 2vw;
+        margin: 0.5vw 0 2.5vw 2vw;
         font: 400 2em 'Lobster Two', Helvetica, sans-serif;
         color: white;
         text-shadow: 1px 1px 0px #ededed, 4px 4px 0px rgba(0, 0, 0, 0.15);
     }
-    nav {
-        height: 12%;
+    nav {       
         background: linear-gradient(90deg, #f0027f, #75489f);
     }
     nav ul {
@@ -337,7 +337,7 @@ input#imageurl {
     }
     .btn-view {
         width: 20vw;
-        padding: 1.1vw 0;
+        padding: 1.2vw 0;
         font-size: 2.5vw;
     }
     .form-inline .form-control {
@@ -357,7 +357,7 @@ input#imageurl {
         background: rgba(255, 255, 255, 0.3);
         color: black;
     }
-    .form-control::placeholder {        
+    .form-control::placeholder {
         font-size: 0;
     }
     .btn {
@@ -383,6 +383,53 @@ input#imageurl {
     .btn:focus {
         background: rgba(60, 179, 113, 0.5);
         border-color: rgba(60, 179, 113, 0.5);
+    }
+}
+
+@media(max-width: 420px) {
+    nav .search {
+        position: absolute;
+        top: 14.8px;
+        width: 21vw;
+        left: 50vw;
+        transform: translate(-10vw);
+    }
+    .form-inline .form-control {
+        position: absolute;
+        font-size: 16px;
+        top: 0;
+        display: inline-block;
+        width: 15vw;
+        height: 5vw;
+        vertical-align: middle;
+        border-top-right-radius: 0%;
+        border-bottom-right-radius: 0%;
+        background: rgba(255, 255, 255, 0.3);
+        border: none;
+    }
+    .form-inline .form-control:focus {
+        background: rgba(255, 255, 255, 0.3);
+        color: rgba(255, 255, 255, 0.8);
+        font-size: 10px;
+    }
+    .form-control::placeholder {
+        font-size: 0;
+    }
+    .btn {
+        position: absolute;
+        top: 0%;
+        left: 15vw;
+        background: rgba(255, 255, 255, 0.3);
+        height: 5vw;
+        width: 3%;
+        border-top-left-radius: 0%;
+        border-bottom-left-radius: 0%;
+        border-left: 0.02%;
+        margin-left: -0.2vw;
+    }
+    .fa-search {
+        top: 1.3vw;
+        left: 1.8vw;
     }
 }
 
