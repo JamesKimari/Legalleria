@@ -45,7 +45,8 @@
                   <p><span class="txt-modal">Description:</span> {{image.description}}</p>
                   <input type="text" value="http://le-galleria.herokuapp.com/images/{{image.id}}" id="imageurl">
                 </div>
-                <div class="modal-footer">                  
+                <div class="modal-footer"> 
+                    <button class="bttn btn-success" id="copylink">Copy to clipboard</button>                 
                 </div>
               </div>
             </div>         
@@ -54,7 +55,7 @@
         <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.3.1/jquery.min.js"></script>
 
         {% bootstrap_javascript %}
-        <script type="text/javascript" src="{% static 'js/gallery.js' %}"></script>
+        <script type="text/javascript" src="{% static 'js/single_pic.js' %}"></script>
         {% endblock %}
 
 </body>
